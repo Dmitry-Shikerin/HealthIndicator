@@ -7,27 +7,33 @@ namespace DefaultNamespace
     {
         [SerializeField] private float _maxHealth;
         
+        private float _targetValue;
+        
         public float Current { get; private set; }
         public float Max => _maxHealth; 
 
         public event Action Changed;
-        
-        public void TakeDamage(float damage)
+
+        private void Start()
         {
-            if(damage < 0)
+            _targetValue = 0.2f;
+        }
+
+        public void TakeDamage()
+        {
+            if(_targetValue < 0)
                 return;
 
-            Current = Mathf.Clamp(Current - damage, 0, Max);
-            Debug.Log(Current);
+            Current = Mathf.Clamp(Current - _targetValue, 0, Max);
             Changed?.Invoke();
         }
 
-        public void Heal(float heal)
+        public void Heal()
         {
-            if(heal < 0)
+            if(_targetValue < 0)
                 return;
 
-            Current = Mathf.Clamp(Current + heal, 0, Max);
+            Current = Mathf.Clamp(Current + _targetValue, 0, Max);
             Changed?.Invoke();
         }
     }

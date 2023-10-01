@@ -363,7 +363,6 @@ GameObject:
   - component: {fileID: 220800961}
   - component: {fileID: 220800960}
   - component: {fileID: 220800959}
-  - component: {fileID: 220800962}
   m_Layer: 5
   m_Name: Damager
   m_TagString: Untagged
@@ -435,9 +434,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 220800962}
-        m_TargetAssemblyTypeName: TakeAwayHealt, Assembly-CSharp
-        m_MethodName: Activate
+      - m_Target: {fileID: 1613770805}
+        m_TargetAssemblyTypeName: DefaultNamespace.Health, Assembly-CSharp
+        m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -485,19 +484,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220800957}
   m_CullTransparentMesh: 1
---- !u!114 &220800962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220800957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09b66d9a9eb92fb4e9a3f80b6ee0523b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 1613770805}
 --- !u!1 &413188536
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +496,6 @@ GameObject:
   - component: {fileID: 413188540}
   - component: {fileID: 413188539}
   - component: {fileID: 413188538}
-  - component: {fileID: 413188541}
   m_Layer: 5
   m_Name: Healer
   m_TagString: Untagged
@@ -582,9 +567,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 413188541}
-        m_TargetAssemblyTypeName: AddHealth, Assembly-CSharp
-        m_MethodName: Activate
+      - m_Target: {fileID: 1613770805}
+        m_TargetAssemblyTypeName: DefaultNamespace.Health, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -632,19 +617,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413188536}
   m_CullTransparentMesh: 1
---- !u!114 &413188541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413188536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0b1ef78b71dce4e90ee872b681f1a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 1613770805}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
